@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Client Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bank-form.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Bank Client Form</h2>
+        <form method="post" action="predict">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="job">Job:</label>
+            <select name="job" required>
+                <option value="">Select Job</option>
+                <option value="admin">Admin</option>
+                <option value="technician">Technician</option>
+                <option value="services">Services</option>
+            </select>
+
+            <label for="marital">Marital Status:</label>
+            <select name="marital" required>
+                <option value="">Select Marital Status</option>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="divorced">Divorced</option>
+            </select>
+
+            <label for="education">Education:</label>
+            <select id="education" name="education" required>
+                <option value="university.degree">University Degree</option>
+                <option value="high.school">High School</option>
+                <option value="basic.9y">Basic 9 Years</option>
+                <option value="professional.course">Professional Course</option>
+                <option value="basic.4y">Basic 4 Years</option>
+                <option value="basic.6y">Basic 6 Years</option>
+                <option value="unknown">Unknown</option>
+                <option value="illiterate">Illiterate</option>
+            </select>
+
+            <label for="default">Credit in Default:</label>
+            <select id="default" name="default">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+                <option value="unknown">Unknown</option>
+            </select>
+
+            <label for="housing">Housing Loan:</label>
+            <select id="housing" name="housing">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+                <option value="unknown">Unknown</option>
+            </select>
+
+            <label for="loan">Personal Loan:</label>
+            <select id="loan" name="loan">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+                <option value="unknown">Unknown</option>
+            </select>
+
+            <button type="submit">Predict Outcome</button>
+        </form>
+    </div>
+</body>
+</html>

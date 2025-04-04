@@ -1,11 +1,12 @@
-#FROM python:3.8-slim-buster
-FROM public.ecr.aws/sam/build-python3.8:1.121.0-20240730174605
-#WORKDIR /python-docker
+FROM python:3.10-slim
 
-COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-ENTRYPOINT python app.py
-#CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+EXPOSE 80
+
+CMD ["python", "app.py"]
